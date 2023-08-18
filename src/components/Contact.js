@@ -1,28 +1,11 @@
-import React, { useState, useEffect } from "react";
-import logo from "./logo.jpg";
-import { Outlet, Link } from "react-router-dom";
-import "../styles/homestyles.css";
+import React from 'react';
 import logo2 from "../components/Images/logo2.png";
-import { useLocation, useNavigate } from 'react-router-dom';
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
-const Home = () => {
-  const history = useNavigate();
-  const location = useLocation();
-  const userData = location.state && location.state.userData;
-
-  const handleLogout = () => {
-    history("/login");
-  }
-  console.log(userData);
-
+const Contact = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -62,53 +45,46 @@ const Home = () => {
 
               </div>
             </div>
-            <div className="log-div">
+            {/* <div className="log-div">
               {userData && <p className="username">{userData.email_id}</p>}
               {userData && <a href="/"><button onClick={handleLogout} className="logout-btn">Logout</button></a>}
               {!userData && <a href="/login"><button className="login-btn">Login</button></a>}
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>
-
-      <div className="menu">
-        <div className=" main-nav container-fluid">
-          <div className="row">
-            <div className="col-12 d-md-flex ">
-              <div className="col-md-3 mt-md-5">
-                <Link to="/sdistance">
-                  <button type="button" id="btn1" className="btn btn-primary">
-                    Shortest Route
-                  </button>
-                </Link>
-              </div>
-              <div className="col-md-3 mt-md-5 col-sm-12">
-                <Link to="/stime">
-                  <button type="button" id="btn2" className="btn btn-primary">
-                    Shortest Time
-                  </button>
-                </Link>
-              </div>
-              <div className="col-md-3 mt-md-5 col-sm-12">
-                <Link to="/allpaths">
-                  <button type="button" id="btn3" className="btn btn-primary">
-                    All Paths
-                  </button>
-                </Link>
-              </div>
-              <div className="col-md-3 mt-md-5">
-                <Link to="/platforms">
-                  <button type="button" id="btn4" className="btn btn-primary">
-                    Platform Info
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
+    <div className="container py-4 text-dark mt-100">
+      <h2 className="mb-4">Contact Us</h2>
+      <p>If you have any questions or feedback about Metro Ride, please feel free to contact us:</p>
+      <div className="row">
+        <div className="col-md-6">
+          <h3 className="mt-4 text-primary">Email</h3>
+          <p>Email us at <a className="text-info" href="mailto:contact@metroride.com">contact@metroride.com</a>.</p>
+        </div>
+        <div className="col-md-6">
+          <h3 className="mt-4 text-success">Phone</h3>
+          <p>Call us at <span className="text-info">123-456-7890</span>.</p>
         </div>
       </div>
+      <h3 className="mt-4 text-danger">Address</h3>
+      <p>Visit us at:</p>
+      <address>
+        <strong>Metro Ride Headquarters</strong><br />
+        123 Metro Street<br />
+        Gachibowli, Hyderabad<br />
+        Zip Code: 12345
+      </address>
+      <div className="mt-4">
+        <h3 className="text-muted">Follow Us</h3>
+        <div className="d-flex">
+          <a href="#" className="btn btn-primary me-3">Facebook</a>
+          <a href="#" className="btn btn-info me-3">Twitter</a>
+          <a href="#" className="btn btn-danger">Instagram</a>
+        </div>
+      </div>
+    </div>
 
-      <div className="main-footer-div">
+    {/* <div className="main-footer-div">
         <div className="footer-div">
           <center className="icons-head">
             <div className="contact-title">
@@ -129,9 +105,11 @@ const Home = () => {
             <p>&#169;2023 OurMetro.LLC, All Rights Reserved</p>
           </center>
         </div>
-      </div>
+      </div> */}
+
+      
     </div>
   );
-};
+}
 
-export default Home;
+export default Contact;
